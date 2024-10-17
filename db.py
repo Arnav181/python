@@ -68,7 +68,7 @@ def register_user(username, password):
         return False, "Username already taken. Please choose a different one."
 
 
-# Function to login a user
+# Function to log in a user
 def login_user(username, password):
     connection = create_connection()
     cursor = connection.cursor()
@@ -86,6 +86,18 @@ def login_user(username, password):
     else:
         return None  # Invalid credentials
 
+
+def complete_task(task_id):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    # Update the task's status to complete (assuming you have a boolean or integer status column)
+    query = "UPDATE tasks SET status = 1 WHERE id = %s"  # 1 indicates completed
+    cursor.execute(query, (task_id,))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
 
 # Function to add a task
 def add_task(user_id, task_name, task_description):

@@ -84,6 +84,10 @@ class TodoListApp:
         self.delete_button = tk.Button(self.control_frame, text="Delete Task", command=self.delete_task)
         self.delete_button.grid(row=2, column=1, padx=10, pady=10)
 
+        # Complete Task button
+        self.complete_button = tk.Button(self.control_frame, text="Complete Task", command=self.complete_task)
+        self.complete_button.grid(row=2, column=2, padx=10, pady=10)
+
         # Reset Task button
         self.reset_button = tk.Button(self.control_frame, text="Reset Tasks", command=self.reset_tasks)
         self.reset_button.grid(row=3, column=0, padx=10, pady=10)
