@@ -3,14 +3,14 @@ from mysql.connector import Error, IntegrityError
 import hashlib
 
 
-# Function to create a connection to the MySQL database
+
 def create_connection():
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            database='todo_list',  # Update this with your database name
-            user='arnav',  # Replace with your MySQL username
-            password='1234'  # Replace with your MySQL password
+            database='todo_list',
+            user='arnav',
+            password='1234'
         )
         return connection
     except Error as e:
